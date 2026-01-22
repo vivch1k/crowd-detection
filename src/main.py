@@ -35,7 +35,8 @@ if __name__ == "__main__":
         text_position=sv.Position.TOP_CENTER,
     )
     round_box_annotator = sv.RoundBoxAnnotator(
-        color=sv.Color.from_hex("#FF00BB"), thickness=1
+        color=sv.Color.from_hex("#FF00BB"),
+        thickness=2
     )
 
     while True:
