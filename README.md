@@ -10,6 +10,8 @@
 
 Чтобы выбрать оптимальный размер модели, было проведено тестирование на размеченном датасете размером в 81 изображение.
 
+Тестирование проводилось на Nvidia RTX 3070, при порогах Confidence = 0.3 и IoU = 0.5.
+
 Результаты тестирования
 | Model     | mAP50  | Precision  | Recall  | Inference (ms)  |
 |-----------|--------|------------|---------|-----------------|
@@ -27,9 +29,13 @@ cd crowd-detection
 ```
 2. Создайте и активируйте виртуальное окружение:
 ```bash
-python -m venv .venv
-.venv\Scripts\activate # Windows
-source .venv/bin/activate # Linux/macOS
+# Windows
+python -m venv .venv 
+.venv\Scripts\activate 
+
+# Linux / MacOS
+python3 -m venv .venv 
+source .venv/bin/activate
 ```
 3. Установите зависимости:
 
@@ -52,7 +58,11 @@ pip install -r requirements.txt
 #### Обработка видео
 Отрисовывает обнаруженных людей и сохраняет аннотированное видео.
 ```bash
+# Windows
 python -m src.main
+
+# Linux / MacOS
+python3 -m src.main
 ```
 Результат сохраняется в ```data/predict_crowd.mp4```
 При первом запуске будут скачены веса модели ```yolo11l.pt``` в корень проекта.
