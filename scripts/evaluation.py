@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import polars as pl
 
-from src.utils import set_seed
+from src.utils import set_seed, get_device
 
 
 data_path = "data/test_yolov11/data.yaml"
@@ -11,7 +11,7 @@ model_name = "yolo11l.pt"
 save_path = f"{project_name}/{model_name.split('.')[0]}"
 
 CONF_THR = 0.3
-IOU_THR = 0.8
+IOU_THR = 0.5
 PERSON_CLASS = 0
 
 
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         conf=CONF_THR,
         iou=IOU_THR,
         classes=[PERSON_CLASS],
-        device="cuda:0",
+        device=get_device(),
         save_dir=save_path,
         save_txt=True,
         save_conf=True,
