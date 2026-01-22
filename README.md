@@ -41,7 +41,11 @@ source .venv/bin/activate
 
 В зависимости от вашего оборудования выберите нужный вам способ установки pytorch. Результат работы будет **одинаковый**, отличается только скорость обработки.
 ```bash
-# Linux / Windows (CUDA)
+# Windows (CUDA)
+pip install typing-extensions
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+
+# Linux (CUDA)
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 
 # Linux (CPU)
